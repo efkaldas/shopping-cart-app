@@ -1,0 +1,33 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}My app{% endblock %}
+
+{% block body %}
+    <h1>asd</h1>
+    <p>{{ file }}</p>
+    <button type="button"class="btn btn-primary" style="float: right;">add new item</button>
+    {% if items %}
+        <table class="table table-striped">
+            <thread>
+                <tr>
+                    <th>Item title</th>
+                    <th>Actions</th>
+                </tr>               
+            </thread>
+            <tbody>
+                {% for item in items %}
+                    <tr>
+                        <td>{{ item }}</td>
+                        <td>
+                            <a href="/items/1" class="btn btn-dark">Show</a>
+                            <a href="/items/1" class="btn btn-primary">Update</a>
+                            <a href="/items/1" class="btn btn-danger">Remove</a>
+                        </td>
+                    </tr>
+                    {% endfor %}
+            </tbody>
+        </table>
+    {% else %}
+    <p>No items</p>
+    {% endif %}
+{% endblock %}
