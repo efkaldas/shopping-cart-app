@@ -3,28 +3,32 @@
 {% block title %}My app{% endblock %}
 
 {% block body %}
-    <h1>asd</h1>
-    <p>{{ file }}</p>
-    <button type="button"class="btn btn-primary" style="float: right;">add new item</button>
+    <h1>Items list</h1>
     {% if items %}
         <table class="table table-striped">
             <thread>
-                <tr>
+                <tr align="center">
                     <th>Item title</th>
-                    <th>Actions</th>
+                    <th>Quantity</th>
+                    <th>Currency</th>
+                    <th>Price</th>
                 </tr>               
             </thread>
             <tbody>
                 {% for item in items %}
-                    <tr>
-                        <td>{{ item }}</td>
-                        <td>
-                            <a href="/items/1" class="btn btn-dark">Show</a>
-                            <a href="/items/1" class="btn btn-primary">Update</a>
-                            <a href="/items/1" class="btn btn-danger">Remove</a>
-                        </td>
+                    <tr align="center">
+                        <td >{{ item.name }}</td>
+                        <td>{{ item.quantity }}</td>
+                        <td>{{ item.currency }}</td>
+                        <td>{{ item.price }}</td>
                     </tr>
                     {% endfor %}
+                    <tr align="center">
+                            <td></td>
+                            <td></td>
+                            <td>Price in EUR:</td>
+                            <td>{{ballance}}</td>
+                        </tr>
             </tbody>
         </table>
     {% else %}
